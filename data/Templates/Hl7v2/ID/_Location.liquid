@@ -1,6 +1,8 @@
 {% capture identifiers -%}
     {% if PL_Field_Value and PL.10 -%}
         {{PL_Field_Value.Value}},{{PL.10.Value}}
+    {% elsif PL_Field_Value and PL_Value_Except_PL5_PL9 and PL_Code_Value -%}
+        {{PL_Field_Value.Value}},{{PL_Value_Except_PL5_PL9 }},{{PL_Code_Value}}
     {% elsif PL_Field_Value and PL_Value_Except_PL5_PL9 -%}
         {{PL_Field_Value.Value}},{{PL_Value_Except_PL5_PL9 }}
     {% elsif PL.10 -%}
